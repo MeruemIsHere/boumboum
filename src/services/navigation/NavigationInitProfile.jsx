@@ -1,19 +1,23 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { TransitionSpecs, TransitionPresets, createStackNavigator } from '@react-navigation/stack'
-import ScreenStart from '../../userinterface/screens/ScreenStart'
-import ScreenLogged from '../../userinterface/screens/ScreenLogged'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+import HeaderInitProfile from '../../userinterface/components/Headers/HeaderInitProfile'
+import ScreenInitProfileStepOne from '../../userinterface/screens/ScreenInitProfileStepOne'
+import ScreenInitProfileStepTwo from '../../userinterface/screens/ScreenInitProfileStepTwo'
+import ScreenInitProfileStepThree from '../../userinterface/screens/ScreenInitProfileStepThree'
 
 
-const Stack = createStackNavigator()
+const TopTab = createMaterialTopTabNavigator()
 
 export default function NavigationInitProfil() {
   return (
-    <Stack.Navigator
-    initialRouteName='start'
+    <TopTab.Navigator
+    initialRouteName='stepOne'
+    tabBar={props => <HeaderInitProfile {...props} />}
+    
     screenOptions={{
       headerShown: false,
+      swipeEnabled: true
       // transitionSpec: {
       //   open: TransitionSpecs.FadeInFromBottomAndroidSpec,
       //   close: TransitionSpecs.TransitionIOSSpec,
@@ -21,23 +25,32 @@ export default function NavigationInitProfil() {
     }}
     >
 
-      <Stack.Screen 
-      name="start" 
-      component={ScreenStart} 
+      <TopTab.Screen 
+      name="stepOne" 
+      component={ScreenInitProfileStepOne} 
       options={{
           // headerShown: false,
       }} />
 
-      <Stack.Screen 
-      name="logged" 
-      component={ScreenLogged} 
+      <TopTab.Screen 
+      name="stepTwo" 
+      component={ScreenInitProfileStepTwo} 
       options={{
           // headerShown: false,
           // gestureDirection: 'vertical',
           // transitionSpec: TransitionSpecs.TransitionIOSSpec,
       }} /> 
 
-    </Stack.Navigator>
+      <TopTab.Screen 
+      name="stepThree" 
+      component={ScreenInitProfileStepThree} 
+      options={{
+          // headerShown: false,
+          // gestureDirection: 'vertical',
+          // transitionSpec: TransitionSpecs.TransitionIOSSpec,
+      }} /> 
+
+    </TopTab.Navigator>
   )
 }
 

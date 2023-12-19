@@ -6,7 +6,14 @@ import ButtonCallToAction from '../components/Buttons/ButtonCallToAction'
 
 const SIZE_SUCCESS_IMAGE = 225
 
-export default function ScreenLogged() {
+export default function ScreenLogged({navigation}) {
+
+
+    function handlePress() {
+        navigation.navigate('init profile')
+    }
+
+
     return (
         <View style={styles.container}>
             <View style={{flexDirection: 'row', gap: 10, justifyContent: 'center', alignItems: 'center'}}>
@@ -52,7 +59,8 @@ export default function ScreenLogged() {
                 </Text>
             </View>
 
-            <ButtonCallToAction>
+            <ButtonCallToAction
+            onPress={handlePress}>
                 <Text
                 style={{
                     color: 'white',
@@ -71,6 +79,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-between',
         padding: 35,
+        backgroundColor: 'white',
         paddingTop: 70,
         alignItems: 'center'
     }

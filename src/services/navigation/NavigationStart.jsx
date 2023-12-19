@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { TransitionSpecs, TransitionPresets, createStackNavigator } from '@react-navigation/stack'
 import ScreenStart from '../../userinterface/screens/ScreenStart'
 import ScreenLogged from '../../userinterface/screens/ScreenLogged'
+import ScreenInitProfile from '../../userinterface/screens/ScreenInitProfile'
 
 
 const Stack = createStackNavigator()
@@ -31,6 +32,15 @@ export default function NavigationStart() {
       <Stack.Screen 
       name="logged" 
       component={ScreenLogged} 
+      options={{
+          // headerShown: false,
+          // gestureDirection: 'vertical',
+          // transitionSpec: TransitionSpecs.TransitionIOSSpec,
+      }} /> 
+      
+      <Stack.Screen 
+      name="init profile" 
+      component={ScreenInitProfile} 
       options={{
           // headerShown: false,
           // gestureDirection: 'vertical',
