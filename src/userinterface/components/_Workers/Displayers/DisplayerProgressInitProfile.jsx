@@ -17,12 +17,10 @@ export default function DisplayerProgressInitProfile({step}) {
             setFirstMount(false)
             return
         }
-        console.log('step', step);
 
         const widthBarCalculated = step * (WIDTH_BAR / 3)
         widthBar.value = withTiming(widthBarCalculated)
     }, [step])
-    console.log(widthBar.value);
 
     return (
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

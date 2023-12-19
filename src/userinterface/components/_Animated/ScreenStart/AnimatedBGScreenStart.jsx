@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         height: '100%',
         position: 'absolute',
         opacity: 0.25,
-        borderWidth: 4
+        // borderWidth: 4
     },
     firstCircle: {
         borderWidth: 1,

@@ -10,7 +10,7 @@ export default function ScreenLogged({navigation}) {
 
 
     function handlePress() {
-        navigation.navigate('init profile')
+        navigation.replace('init profile')
     }
 
 

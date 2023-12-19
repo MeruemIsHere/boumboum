@@ -23,13 +23,11 @@ export default function AnimatedTopSectionScreenStart() {
     const handleGetHeight = (event) => {
         const {height} = event.nativeEvent.layout
         if(!heightGetted) {
-            console.log("height", height);
             setContainerHeight(height)
             setHeightGetted(true)
         }
     }
 
-    console.log(containerHeight);
     
     return (
         <>

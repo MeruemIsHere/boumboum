@@ -20,7 +20,7 @@ export default function AnimatedBottomSectionScreenStart() {
 
 
     function handleLogWithSpotify() {
-        navigation.navigate('logged')
+        navigation.replace('logged')
     }
 
     return (

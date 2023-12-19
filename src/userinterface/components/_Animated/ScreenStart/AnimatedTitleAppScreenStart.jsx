@@ -66,7 +66,7 @@ export default function AnimatedTitleAppScreenStart() {
                             style={{
                                 width: maskWidth,
                                 height: '100%',
-                                backgroundColor: 'white'
+                                backgroundColor: 'white',
                             }}>
 
                             </Animated.View>

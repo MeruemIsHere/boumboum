@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ButtonBack from '../Buttons/ButtonBack'
 import DisplayerProgressInitProfile from '../_Workers/Displayers/DisplayerProgressInitProfile'
 import { SIZE } from '../../../services/constants/styles'
@@ -11,12 +11,16 @@ export default function HeaderInitProfile({...props}) {
     const route = routes.find(rt => rt.key === history[history.length - 1].key)
     const indexRoute = routes.findIndex(rt => rt.key === history[history.length - 1].key)
     const step = indexRoute + 1
-    console.log(JSON.stringify(props, null, 2));
+    // console.log(JSON.stringify(props, null, 2));
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <ButtonBack navigation={props.navigation} />
+
+                <ButtonBack 
+                goBack={props.navigation.goBack} 
+                step={step}
+                />
                 
                 <DisplayerProgressInitProfile 
                 step={step}
