@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { COLORS, SIZE } from '../../services/constants/styles'
+import { COLORS, SIZE, STYLE } from '../../services/constants/styles'
 import ButtonCallToAction from '../components/Buttons/ButtonCallToAction'
 
 
@@ -43,18 +43,19 @@ export default function ScreenLogged({navigation}) {
                 width: SIZE_SUCCESS_IMAGE,
                 }} />
 
-                <Text style={{
-                    fontSize: 24,
-                    fontWeight: '500',
-                    color: COLORS.darkBlue
-                }}>
+                <Text style={[
+                    STYLE.h2
+                ]}>
                     Logged In Successful!
                 </Text>
                 
-                <Text style={{
-                    color: COLORS.lightGrey,
-                    textAlign: 'center'
-                }}>
+                <Text style={[
+                    STYLE.p, 
+                    {
+                        color: COLORS.lightGrey,
+                        textAlign: 'center'
+                    }
+                ]}>
                     You have been logged in successfully. Please enter the your details to complete your profile
                 </Text>
             </View>
@@ -62,11 +63,9 @@ export default function ScreenLogged({navigation}) {
             <ButtonCallToAction
             onPress={handlePress}>
                 <Text
-                style={{
-                    color: 'white',
-                    fontSize: 15,
-                    fontWeight: 'bold'
-                }}>
+                style={[
+                    STYLE.textButton
+                ]}>
                     Continue
                 </Text>
             </ButtonCallToAction>

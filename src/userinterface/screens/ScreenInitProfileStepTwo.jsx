@@ -3,6 +3,7 @@ import React from 'react'
 import { COLORS } from '../../services/constants/styles'
 import ButtonCallToAction from '../components/Buttons/ButtonCallToAction'
 import BluredCircle from '../components/Shapes/BluredCircle'
+import FormInitProfile from '../components/Forms/FormInitProfile'
 
 export default function ScreenInitProfileStepTwo({navigation}) {
 
@@ -22,8 +23,8 @@ export default function ScreenInitProfileStepTwo({navigation}) {
                 </Text>
             </View>
             
-            <View style={{flex: 1, borderWidth: 1}}>
-                {/* TODO: create form */}
+            <View style={{flex: 1}}>
+                <FormInitProfile />
             </View>
 
             <View>

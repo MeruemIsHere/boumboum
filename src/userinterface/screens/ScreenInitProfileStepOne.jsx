@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import UploaderProfilePicture from '../components/_Workers/Uploaders/UploaderProfilePicture'
 import ButtonCallToAction from '../components/Buttons/ButtonCallToAction'
-import { COLORS } from '../../services/constants/styles'
+import { COLORS, STYLE } from '../../services/constants/styles'
 
 export default function ScreenInitProfileStepOne({navigation}) {
 
@@ -14,10 +14,9 @@ export default function ScreenInitProfileStepOne({navigation}) {
         <View style={styles.container}>
             <View>
                 <Text
-                style={{
-                    fontSize: 24,
-                    color: COLORS.darkBlue
-                }}>
+                style={[
+                    STYLE.h2
+                ]}>
                     Upload profile picture
                 </Text>
             </View>

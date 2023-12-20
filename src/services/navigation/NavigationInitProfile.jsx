@@ -17,11 +17,7 @@ export default function NavigationInitProfil() {
     
     screenOptions={{
       headerShown: false,
-      swipeEnabled: true
-      // transitionSpec: {
-      //   open: TransitionSpecs.FadeInFromBottomAndroidSpec,
-      //   close: TransitionSpecs.TransitionIOSSpec,
-      // }
+      swipeEnabled: false
     }}
     >
 
@@ -36,18 +32,12 @@ export default function NavigationInitProfil() {
       name="stepTwo" 
       component={ScreenInitProfileStepTwo} 
       options={{
-          // headerShown: false,
-          // gestureDirection: 'vertical',
-          // transitionSpec: TransitionSpecs.TransitionIOSSpec,
       }} /> 
 
       <TopTab.Screen 
       name="stepThree" 
       component={ScreenInitProfileStepThree} 
       options={{
-          // headerShown: false,
-          // gestureDirection: 'vertical',
-          // transitionSpec: TransitionSpecs.TransitionIOSSpec,
       }} /> 
 
     </TopTab.Navigator>

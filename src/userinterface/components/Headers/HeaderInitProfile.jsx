@@ -11,14 +11,14 @@ export default function HeaderInitProfile({...props}) {
     const route = routes.find(rt => rt.key === history[history.length - 1].key)
     const indexRoute = routes.findIndex(rt => rt.key === history[history.length - 1].key)
     const step = indexRoute + 1
-    // console.log(JSON.stringify(props, null, 2));
+    // console.log(JSON.stringify(routes, null, 2));
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
 
                 <ButtonBack 
-                goBack={props.navigation.goBack} 
+                goBack={step === 1 ? () => {} : () => props.navigation.navigate(routes[indexRoute - 1].name)} 
                 step={step}
                 />
                 
