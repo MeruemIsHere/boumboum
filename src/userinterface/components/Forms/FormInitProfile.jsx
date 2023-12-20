@@ -1,17 +1,23 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import InputDateOfBirth from '../Inputs/InputDateOfBirth'
-import CheckBoxGender from './../Checkboxes/CheckBoxGender';
 import InputDescription from '../Inputs/InputDescription';
+import CheckBoxesGender from '../Checkboxes/CheckBoxesGender';
 
 export default function FormInitProfile() {
     return (
         <>
-            <InputDateOfBirth />
+            <View>
+                <InputDateOfBirth />
+            </View>
 
-            <CheckBoxGender />
+            <View style={{gap: 15}}>
+                <CheckBoxesGender />
+            </View>
             
-            <InputDescription />
+            <View>
+                <InputDescription />
+            </View>
         </>
     )
 }

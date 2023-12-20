@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         paddingVertical: 12,
         borderWidth: 1,
-        borderColor: '#DEDEDE',
+        borderColor: COLORS.border,
         borderRadius: 16,
         elevation: 2,
     }

@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 35,
         paddingTop: 50,
         paddingBottom: 10,
-        gap: 25
+        gap: 20
     },
     header: {
         // borderWidth: 1,

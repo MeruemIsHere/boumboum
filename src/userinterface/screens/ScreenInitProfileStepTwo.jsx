@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { COLORS } from '../../services/constants/styles'
+import { COLORS, STYLE } from '../../services/constants/styles'
 import ButtonCallToAction from '../components/Buttons/ButtonCallToAction'
 import BluredCircle from '../components/Shapes/BluredCircle'
 import FormInitProfile from '../components/Forms/FormInitProfile'
@@ -15,15 +15,14 @@ export default function ScreenInitProfileStepTwo({navigation}) {
         <View style={styles.container}>
             <View>
                 <Text
-                style={{
-                    fontSize: 24,
-                    color: COLORS.darkBlue
-                }}>
+                style={[
+                    STYLE.h2
+                ]}>
                     Tell us more about you
                 </Text>
             </View>
             
-            <View style={{flex: 1}}>
+            <View style={{flex: 1, paddingVertical: 35, gap: 32}}>
                 <FormInitProfile />
             </View>
 
