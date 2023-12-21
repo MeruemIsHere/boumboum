@@ -44,5 +44,16 @@ export const STYLE = StyleSheet.create({
         height: 52,
         width: '100%',
         borderColor: COLORS.border
+    },
+    button: {
+        height: 50,
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 10,
+        borderRadius: 10,
+        backgroundColor: COLORS.darkBlue,
+        overflow: 'hidden'
     }
 })

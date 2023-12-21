@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import UploaderProfilePicture from '../components/_Workers/Uploaders/UploaderProfilePicture'
 import ButtonCallToAction from '../components/Buttons/ButtonCallToAction'
 import { COLORS, STYLE } from '../../services/constants/styles'
 
 export default function ScreenInitProfileStepOne({navigation}) {
+    const [profilePicture, setProfilePicture] = useState(false)
+
+    const hasProfilePictureSelected = !!profilePicture
 
     function handleNextStep() {
         navigation.navigate('stepTwo')
@@ -22,22 +25,38 @@ export default function ScreenInitProfileStepOne({navigation}) {
             </View>
             
             <View style={{alignSelf: 'center'}}>
-                <UploaderProfilePicture />
+                <UploaderProfilePicture hasProfilePictureSelected={hasProfilePictureSelected} setProfilePicture={setProfilePicture} />
             </View>
 
             <View>
-                <ButtonCallToAction
-                onPress={handleNextStep}
-                >
-                    <Text 
-                    style={{
-                        color: 'white',
-                        fontSize: 15,
-                        fontWeight: 'bold'
-                    }}>
-                        Next step
-                   </Text>
-                </ButtonCallToAction>
+
+                {
+                    hasProfilePictureSelected ? (
+
+                        <ButtonCallToAction
+                        onPress={handleNextStep}
+                        >
+                            <Text 
+                            style={{
+                                color: 'white',
+                                fontSize: 15,
+                                fontWeight: 'bold'
+                            }}>
+                                Next step
+                        </Text>
+                        </ButtonCallToAction>
+
+                    ) : (
+
+                        <View style={[
+                            STYLE.button,
+                            {opacity: 0}
+                        ]}>
+                            
+                        </View>
+
+                    )
+                }
             </View>
         </View>
     )

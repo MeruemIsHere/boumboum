@@ -7,23 +7,28 @@ export default function ListFavoritesSongs() {
     const listSongs = [
         {
             title: "Crazy little thing called love",
-            artist: 'Queen'
+            artist: 'Queen',
+            image: 'queen-song.jpg'
         },
         {
             title: "Dancing in the moonlight",
-            artist: 'Toploader'
+            artist: 'Toploader',
+            image: 'toploader-song.jpg'
         },
         {
             title: "Feu de bois",
-            artist: 'Damso'
+            artist: 'Damso',
+            image: 'damso-song.webp'
         },
         {
             title: "Shonen",
-            artist: 'Orelsan'
+            artist: 'Orelsan',
+            image: 'orelsan-song.webp'
         },
         {
             title: "Boomer",
-            artist: 'Gael Faye'
+            artist: 'Gael Faye',
+            image: 'gael-faye-song.jpg'
         }
     ]
 
@@ -44,7 +49,7 @@ export default function ListFavoritesSongs() {
                 data={listSongs}
                 renderItem={({item}) => renderItem(item)}
                 keyExtractor={(item, index) => index}
-                ItemSeparatorComponent={() => <View style={{height: 10}} />}
+                ItemSeparatorComponent={() => <View style={{height: 8}} />}
                 showsVerticalScrollIndicator={false}
             /> 
         </View>

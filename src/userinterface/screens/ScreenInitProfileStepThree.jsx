@@ -8,7 +8,7 @@ import { COLORS } from '../../services/constants/styles';
 export default function ScreenInitProfileStepThree() {
     return (
         <View style={styles.container}>
-            <View>
+            <View style={{paddingHorizontal: 35}}>
                 <Text
                 style={{
                     fontSize: 24,
@@ -29,16 +29,18 @@ export default function ScreenInitProfileStepThree() {
 
             <ListFavoritesSongs />
 
-            <ButtonCallToAction>
-                <Text 
-                style={{
-                    color: 'white',
-                    fontSize: 15,
-                    fontWeight: 'bold'
-                }}>
-                    Finish
-                </Text>
-            </ButtonCallToAction>
+            <View style={{paddingHorizontal: 35}}>
+                <ButtonCallToAction>
+                    <Text 
+                    style={{
+                        color: 'white',
+                        fontSize: 15,
+                        fontWeight: 'bold'
+                    }}>
+                        Finish
+                    </Text>
+                </ButtonCallToAction>
+            </View>
         </View>
     )
 }
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-        padding: 35,
+        paddingVertical: 35,
         paddingTop: 0,
         justifyContent: 'space-between'
     }

@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { COLORS } from '../../../services/constants/styles'
+import { COLORS, STYLE } from '../../../services/constants/styles'
 import BluredCircle from '../Shapes/BluredCircle'
 
 const R_CIRCLE = 62
@@ -9,18 +9,7 @@ export default function ButtonCallToAction({...props}) {
     return (
         <Pressable 
         {...props}
-        style={{
-            // borderWidth: 1,
-            height: 50,
-            width: '100%',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: 10,
-            borderRadius: 10,
-            backgroundColor: COLORS.darkBlue,
-            overflow: 'hidden'
-        }}
+        style={[STYLE.button]}
         >
             <View
             style={{

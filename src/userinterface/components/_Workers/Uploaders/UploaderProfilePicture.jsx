@@ -1,7 +1,8 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react'
 import DisplayerEmptyAvatar from '../Displayers/DisplayerEmptyAvatar'
 import { COLORS } from '../../../../services/constants/styles'
+import DisplayerUserProfilePicture from '../Displayers/DisplayerUserProfilePicture'
 
 
 const SIZE_COMPONENT = 172
@@ -10,14 +11,18 @@ const SIZE_CONTAINER_EDIT_ICON = 60.56
 const SIZE_EDIT_ICON = 24.23
 const BORDER_CONTAINER_EDIT_ICON = 6.06
 
-export default function UploaderProfilePicture() {
+export default function UploaderProfilePicture({hasProfilePictureSelected, setProfilePicture}) {
 
     // TODO: HandleGetPicture
+    const handleGetPicture = () => {
+        setProfilePicture(true)
+    }
 
     return (
         <>
             {/* dotted lines */}
-            <View
+            <Pressable
+            onPress={handleGetPicture}
             style={{
                 height: SIZE_COMPONENT,
                 aspectRatio: 1/1,
@@ -30,7 +35,14 @@ export default function UploaderProfilePicture() {
                 padding: 10
             }}
             >
-                <DisplayerEmptyAvatar sizeComponent={SIZE_COMPONENT}/>
+                {
+                    hasProfilePictureSelected ? (
+                        <DisplayerUserProfilePicture sizeComponent={SIZE_COMPONENT} />
+                    ) : (
+                        <DisplayerEmptyAvatar sizeComponent={SIZE_COMPONENT}/>
+                    )
+                }
+
 
                 {/* Edit icon */}
                 <View
@@ -60,7 +72,7 @@ export default function UploaderProfilePicture() {
                         />
                     </View>
                 </View>
-            </View>
+            </Pressable>
         </>
     )
 }
