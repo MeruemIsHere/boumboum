@@ -1,42 +1,31 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import BluredCircle from '../../Shapes/BluredCircle'
 import { COLORS } from '../../../../services/constants/styles'
+import useGetterSizeComponent from '../../../../services/hooks/useGetterSizeComponent'
+import AnimatedBluredPinkCircle from '../AnimatedBluredPinkCircle'
+import AnimatedBluredBlueCircle from '../AnimatedBluredBlueCircle'
 // import { BlurView } from '@react-native-community/blur'
 
 const SIZE_FIRST_CIRCLE = 356
 const R_CIRCLE = 386 / 2
+const BLUR = 364
+// const BLUR = 0
 
 export default function AnimatedBGScreenStart() {
+    const {handleOnLayout, containerWidth, containerHeight} = useGetterSizeComponent()
+
+
     return (
-        <View style={styles.container}>
-            <View
-            style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                // borderWidth: 3,
-                // borderColor: 'red',
-                width: (R_CIRCLE * 2) + 50,
-                height: '100%'
-            }}
-            >
-                <BluredCircle cx={0} cy={0} r={R_CIRCLE} color={COLORS.pink} blur={364} />
-            </View>
-            <View
-            style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                // borderWidth: 3,
-                // borderColor: 'red',
-                width: (R_CIRCLE * 2) + 50,
-                height: '100%'
-            }}
-            >
-                <BluredCircle cx={0} cy={0} r={R_CIRCLE} color={COLORS.pink} blur={364} />
-            </View>
-            {/* <BluredCircle cx={R_CIRCLE * (2/3)} cy={0} r={R_CIRCLE} color={COLORS.skyBlue} blur={0} /> */}
+        <View style={styles.container} onLayout={handleOnLayout}>
+
+            {
+                containerHeight && containerWidth ? (
+                    <>
+                        <AnimatedBluredPinkCircle cx={0} cy={0} r={R_CIRCLE} blur={BLUR} containerHeight={containerHeight} containerWidth={containerWidth} />
+                        <AnimatedBluredBlueCircle cx={0} cy={0} r={R_CIRCLE} blur={BLUR} />
+                    </>
+                ) : null
+            }
         </View>
     )
 }

@@ -33,7 +33,8 @@ export default function AnimatedBottomSectionScreenStart() {
                 gap: 25, 
                 opacity: textOpacity,
                 position: 'relative',
-                top: textTop
+                top: textTop,
+                backgroundColor: 'white'
             }}>
                 <Text 
                 style={[

@@ -6,6 +6,7 @@ import ButtonCallToAction from '../components/Buttons/ButtonCallToAction';
 import { COLORS } from '../../services/constants/styles';
 
 export default function ScreenInitProfileStepThree() {
+
     return (
         <View style={styles.container}>
             <View style={{paddingHorizontal: 35}}>

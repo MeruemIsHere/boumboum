@@ -15,7 +15,7 @@ export default function ScreenStart() {
 
       <AnimatedTopSectionScreenStart />
       
-      <View style={{flex: 1, width: '100%'}}>
+      <View style={{flex: 1, width: '100%', backgroundColor: 'white'}}>
         <View style={{flexDirection: 'row', alignSelf: 'center'}}>
           <AnimatedLogoScreenStart />
           <AnimatedTitleAppScreenStart />
@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
-        position: 'relative'
+        position: 'relative',
     }
 })
