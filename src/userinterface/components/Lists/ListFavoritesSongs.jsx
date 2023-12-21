@@ -51,6 +51,7 @@ export default function ListFavoritesSongs() {
                 keyExtractor={(item, index) => index}
                 ItemSeparatorComponent={() => <View style={{height: 8}} />}
                 showsVerticalScrollIndicator={false}
+                contentContainerStyle={{paddingBottom: 50}}
             /> 
         </View>
     )

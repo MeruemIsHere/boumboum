@@ -31,7 +31,7 @@ export default function AnimatedBluredPinkCircle({cx, cy, r, blur, containerHeig
                 withTiming(POSITION_2.cx, {duration: DURATION}),
                 withTiming(POSITION_3.cx, {duration: DURATION}),
                 withTiming(POSITION_1.cx, {duration: DURATION})
-            )
+            ), -1
         )
 
         
@@ -40,7 +40,7 @@ export default function AnimatedBluredPinkCircle({cx, cy, r, blur, containerHeig
                 withTiming(POSITION_2.cy, {duration: DURATION}),
                 withTiming(POSITION_3.cy, {duration: DURATION}),
                 withTiming(POSITION_1.cy, {duration: DURATION})
-            )
+            ), -1
         )
     }, [])
 

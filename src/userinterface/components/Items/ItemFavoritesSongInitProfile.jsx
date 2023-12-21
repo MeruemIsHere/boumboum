@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { COLORS, STYLE } from '../../../services/constants/styles'
+import { useNavigation } from '@react-navigation/native'
 
 const SIZE_IMAGE = 60
 const IMAGE_QUEEN = require('../../../../assets/_temp/queen-song.jpg')
@@ -9,7 +10,12 @@ const IMAGE_DAMSO = require('../../../../assets/_temp/damso-song.webp')
 const IMAGE_ORELSAN = require('../../../../assets/_temp/orelsan-song.webp')
 const IMAGE_FAYE = require('../../../../assets/_temp/gael-faye-song.jpg')
 
+const SIZE_ICON = 16
+
 export default function ItemFavoritesSongInitProfile({song}) {
+
+    const navigation = useNavigation()
+
     let image
 
     if(song.artist === 'Queen') image = IMAGE_QUEEN
@@ -19,8 +25,14 @@ export default function ItemFavoritesSongInitProfile({song}) {
     if(song.artist === 'Gael Faye') image = IMAGE_FAYE
     
 
+    function handleOnPress() {
+        navigation.navigate('search song')
+    }
+
     return (
-        <Pressable style={styles.container}>
+        <Pressable 
+        onPress={handleOnPress}
+        style={styles.container}>
             <View style={{
                 height: SIZE_IMAGE,
                 aspectRatio: 1 / 1,
@@ -50,13 +62,21 @@ export default function ItemFavoritesSongInitProfile({song}) {
                 <View
                 style={{
                     width: 24,
+                    justifyContent: 'center',
+                    alignItems: 'center',
                     aspectRatio: 1/1,
                     backgroundColor: COLORS.pink,
                     borderRadius: 4,
                     elevation: 5
                 }}
                 >
-
+                    <Image 
+                    style={{
+                        width: SIZE_ICON,
+                        height: SIZE_ICON
+                    }}
+                    source={require('../../../../assets/icons/checked-icon.png')}
+                    /> 
                 </View>
             </View>
         </Pressable>

@@ -11,7 +11,7 @@ export default function ScreenStart() {
 
   return (
     <View style={styles.container}>
-      <AnimatedBGScreenStart />
+      <AnimatedBGScreenStart withDelayStart />
 
       <AnimatedTopSectionScreenStart />
       

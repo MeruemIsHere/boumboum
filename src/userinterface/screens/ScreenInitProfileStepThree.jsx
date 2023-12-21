@@ -5,7 +5,11 @@ import ListFavoritesSongs from '../components/Lists/ListFavoritesSongs';
 import ButtonCallToAction from '../components/Buttons/ButtonCallToAction';
 import { COLORS } from '../../services/constants/styles';
 
-export default function ScreenInitProfileStepThree() {
+export default function ScreenInitProfileStepThree({navigation}) {
+
+    function handlePressFinish() {
+        navigation.replace('start matching')
+    }
 
     return (
         <View style={styles.container}>
@@ -31,7 +35,9 @@ export default function ScreenInitProfileStepThree() {
             <ListFavoritesSongs />
 
             <View style={{paddingHorizontal: 35}}>
-                <ButtonCallToAction>
+                <ButtonCallToAction
+                onPress={handlePressFinish}
+                >
                     <Text 
                     style={{
                         color: 'white',

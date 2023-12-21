@@ -4,6 +4,8 @@ import { TransitionPresets, createStackNavigator } from '@react-navigation/stack
 import ScreenStart from '../../userinterface/screens/ScreenStart'
 import ScreenLogged from '../../userinterface/screens/ScreenLogged'
 import ScreenInitProfile from '../../userinterface/screens/ScreenInitProfile'
+import ScreenSearchSong from '../../userinterface/screens/ScreenSearchSong'
+import ScreenStartMatching from '../../userinterface/screens/ScreenStartMatching'
 
 
 const Stack = createStackNavigator()
@@ -42,6 +44,20 @@ export default function NavigationStart() {
       component={ScreenInitProfile} 
       options={{
         ...TransitionPresets.SlideFromRightIOS,
+      }} /> 
+
+      <Stack.Screen 
+      name="search song" 
+      component={ScreenSearchSong} 
+      options={{
+        ...TransitionPresets.SlideFromRightIOS,
+      }} /> 
+
+      <Stack.Screen 
+      name="start matching" 
+      component={ScreenStartMatching} 
+      options={{
+        // ...TransitionPresets.SlideFromRightIOS,
       }} /> 
 
     </Stack.Navigator>
