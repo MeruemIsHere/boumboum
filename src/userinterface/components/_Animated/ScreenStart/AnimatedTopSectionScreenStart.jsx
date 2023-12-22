@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import Animated, { useSharedValue, withDelay, withSequence, withTiming } from 'react-native-reanimated'
 import { DELAY_LOADING, DELAY_SECOND_ANIMATION, DURATION_SECOND_ANIMATION } from './_constant'
 import useGetterSizeComponent from '../../../../services/hooks/useGetterSizeComponent'
+import { LinearGradient } from 'expo-linear-gradient'
+import { COLORS } from '../../../../services/constants/styles'
 
 const RATIO_IMAGE = 65 / 86
 const DELAY_GETTER_SIZE = 100
@@ -39,6 +41,16 @@ export default function AnimatedTopSectionScreenStart() {
                     }}
                     />
                 </View>
+                <LinearGradient 
+                colors={["#ffffff00", '#fff']}
+                start={{x: 0, y: 0.8}}
+                end={{x: 0, y: 1}}
+                style={{
+                    flex: 1, 
+                    width: '100%', 
+                    alignItems: 'flex-end'
+                }}>
+                </LinearGradient>
             </Animated.View>
         </>
     )
